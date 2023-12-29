@@ -7,7 +7,7 @@ const errorMiddleware=require('./middlewares/errorMiddleware')
 const cors=require("cors")
 
 const front_end=process.env.FRONTEND
-const MONGO_URL=process.env.MONGO_URL
+const MONGO_URI=process.env.MONGO_URL
 const port=process.env.PORT || 3000
 
 const corsOptions={
@@ -36,7 +36,7 @@ app.get('/blog',(req,res)=>{
 
 
 mongoose.set("strictQuery",false)
-mongoose.connect(MONGO_URL)
+mongoose.connect(MONGO_URI)
 .then(()=>{
     console.log("app is running")
     app.listen(port,()=>{
