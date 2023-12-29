@@ -22,8 +22,8 @@ app.use('/api/products', productRoute)
 
 
 app.get('/',(req,res)=>{
-    // res.send("hello world")
-    throw new Error("fake error")
+    res.send("hello world")
+    
 })
 
 app.use(errorMiddleware)
